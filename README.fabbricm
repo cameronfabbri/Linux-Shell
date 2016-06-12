@@ -1,0 +1,36 @@
+Cameron Fabbri README
+
+
+1. All required features are correctly implemented. One bug is that if you run a command from
+	history using the #! syntax, it will not run it if it's a built in command.  
+
+2. Features: working directory, commands and relative paths, STDIN and STDOUT, history,
+	history execution, job listing, backgrounding, job killing, built in commands, and exit.
+
+	Required Features:
+	- prompt prints the current working directory, as well as the full path.
+	  It was unclear whether or not we should have just the directory, for 
+	  example if you are in /home/user/files, then the prompt would be files$
+	  because the example on the website showed a full path, so I kept it as
+	  the full path.  It also prints the username before the path. Example:
+	  username@/home/user $ _
+	- commands by relative or absolute pathnames work, so ls and /bin/ls work
+	  the same.
+	- STDIN and STDOUT for processes into and out of files work. Example:
+	  echo "test" > test.txt
+	- the history is stored in /tmp/.c_history. Upon each instance of the shell,
+	  a new history file is created, and the old one deleted.
+	- history execution is completed by !# where # is the number next to the command
+	  displayed by the history.  !-1 will run the previous command. 
+	- backgrounding is completed by putting a & at the end of the command.
+	- the processes that are running in the background can be viewed by using the job command.
+	- you can kill a job by typing kill <pid> where pid is the pid number listed next to the
+	command in job.
+	- exit will exit the shell unless there are background processes running.  If there are,
+	then you will have to kill those first. 
+
+	Extra Feature:  
+	-tab complete
+	 
+
+	3. Stackoverflow, classmate's help (Troy Flagg), general Googling. 
